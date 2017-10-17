@@ -8,6 +8,7 @@ Most of these are all R baseball projects.
 Completed: 
 BB% vs oWAR 
 Team Pitching Comparison
+Quality Starts ending in a loss
 
 
 
@@ -16,6 +17,7 @@ Projecting 2018 Season
 Analysis of Bullpen Salary and its meaning 
 Tommy John Heat Map 
 Launch Angle Project
+Rookie Comparison Tool
 
 
 
