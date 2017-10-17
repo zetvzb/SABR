@@ -7,10 +7,16 @@ Most of these are all R baseball projects.
 
 Completed: 
 BB% vs oWAR 
+Team Pitching Comparison
+
+
 
 In Progress: 
 Projecting 2018 Season 
 Analysis of Bullpen Salary and its meaning 
+Tommy John Heat Map 
+Launch Angle Project
+
 
 
 Other files in here: 
