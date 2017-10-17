@@ -1,4 +1,4 @@
-#This shows BB% in comparison to career offensive WAR
+#This shows BB% in comparison to career offensive WAR. The objective is to discover offensive presence without the tools to walk.
 #Show players with less than 3% BB% can have a high offensive WAR
 #Objective is to make a scatterplot 
 
