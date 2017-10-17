@@ -48,16 +48,15 @@ OffensiveWarData <- final
 Analyze <- merge(x=WalksData, y=OffensiveWarData, by.x=c("playerID", "yearID","teamID"), by.y=c("player_ID","yearID", "teamID"))
 
 
-### here is an example that will illustrate it
+### Check for factors vs numeric
 is.factor(Analyze$PA) ### shows it is a factor
 is.numeric(Analyze$BB) ### shows it is numeric
 (test = head(Analyze$PA))
-as.numeric(test) ### completely wrong
 as.numeric(as.character(test)) ### correct
 
 #need to omit the observations for which there is no recorded PA or BB
 skip = which(Analyze$PA == "NULL" | Analyze$BB == "NULL") 
-Analyze = Analyze[-skip,] ### I would also recommend renaming Analyze every time you modify it, because then you can track errors more easily. I won't do it in this script though, because that's not how you wrote it.
+Analyze = Analyze[-skip,] 
 
 BB = Analyze$BB ### number of walks
 PA = as.numeric(as.character((Analyze$PA))) ### complete number of plate appearances
@@ -78,18 +77,16 @@ library("dplyr")
 Analyze1 <- distinct(Analyze1)
 
 
-#NEED TO USE NUMERIC VARIABLES IN SCATTER PLOTS
+#Numerics for Scatter plot 
 Analyze1$WAR_off = as.numeric(as.character(Analyze1$WAR_off)) ### need to switch this to a numeric variable
 
-
-### side note: the ugly black bar at the bottom earlier was actually the thousands and thousands of tick marks all smushed together, one for each different factor level of WAR_off. changing it to a numeric variable gets rid of that
 
 #Plot the function oWAR x BBPerc 
 #PLOT AND LINEAR MODEL
 ### doing it with automatic x and y limits
 plot(Analyze1$WAR_off, Analyze1$BBperc , main="Comparing OffensiveWAR and BB%", xlab="Player Offensive WAR", ylab="Player Walk Percentage")
-### gotta say there does not seem to be super much of a relationship here
-### let's run a linear regression just in case
+### there does not seem to be super much of a relationship here
+###  run a linear regression just in case
 fit = lm(BBperc ~ WAR_off , data=Analyze1)
 abline(fit)
 summary(fit) 
@@ -107,4 +104,4 @@ Analyze$PA = as.numeric(as.character(Analyze$PA))
 (weird = which((as.numeric(as.character(Analyze$PA)) > 400) & Analyze$BB == 0))
 
 weirdSet = Analyze[weird,]
-View(weirdSet) ### this should help you investigate the data set
+View(weirdSet) 
