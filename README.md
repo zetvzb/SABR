@@ -18,6 +18,7 @@ Analysis of Bullpen Salary and its meaning ,
 Tommy John Heat Map,
 Launch Angle Project,
 Rookie Comparison Tool,
+A project to identify stnregths and weaknesses of MLB umpires. Almost a statistic such as "Losses beyond replacement" to identify flaws with umpires in the mlb. 
 
 
 
