@@ -5,7 +5,6 @@
 ### Uses Master in Sean Lahman's Baseball Database.
 
 
-#install.packages(c("DBI","RMySQL","dplyr"))
 require(DBI)
 require(RMySQL)
 require(dplyr)
@@ -19,7 +18,7 @@ download.file(fileUrl, destfile="war_daily_bat.csv", method="curl")
 df <- read.csv("war_daily_bat.csv", header=TRUE)
 
 #bring in master table from Lahmans 
-master <- read.csv(file="/Users/zachtallevast/Box Sync/SABR/Lahmans Database/core/Master.csv", na.strings = "..",header=TRUE,sep=",", fill=TRUE)
+master <- read.csv(file="Master.csv", na.strings = "..",header=TRUE,sep=",", fill=TRUE)
 
 #Join master and WAR data frames
 df2 <- merge(x=df, y=master, by.x="player_ID", by.y="playerID", incomparables=NULL)
